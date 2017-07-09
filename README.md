@@ -1,20 +1,22 @@
 # speller_env
 
-# GUI
+# Important Information
 
-##### Launching GUI
+##### Stages
 
-```bash
-python config_gui.py [configFile]
-```
+There are two stages in the speller:
 
-The GUI prompts for inputs on the command line while running
+Stage 1: Choosing columns
 
-##### Parameters:
+* Selection rectangle is vertical
+* Actions available: move left, move right, select column
+* After column is selected, code switches to stage 2.
 
-configFile (optional) - open a config file to edit
+Stage 2: Choosing rows
 
-
+* Selection rectangle is horizontal
+* Actions available: move up, move down, select row
+* After row is selected, the output string is updated and code switches back to stage 1.
 
 ## Dependencies
 
@@ -80,7 +82,21 @@ String: the current output string
 ```python
 P3.move(1)
 ```
+In stage 1:
 
+1: move right
+
+2: move left
+
+0: select column
+
+In stage 2:
+
+1: move up
+
+2: move down
+
+0: select row
 ### Getting the log
 
 Simulation.show_log()
