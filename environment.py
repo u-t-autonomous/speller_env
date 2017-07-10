@@ -2,7 +2,6 @@
 import pygame
 import csv
 
-#Test
 class P300:
     screen = pygame.display.set_mode((640, 480))
     clock = pygame.time.Clock()
@@ -63,6 +62,7 @@ class P300:
                     (4, 3): "X",
                     (4, 4): "Y", (4, 5): "Z", (4, 6): " ", (4, 7): ""}
         self.output_string = ""
+        # Rendering Table
         self.screen.fill((0, 0, 0))
         self.screen.blit(self.row_1,
                          (self.rx - self.row_1.get_width() // 2, (self.ry + self.spce) - self.row_1.get_height() // 2))
@@ -166,9 +166,11 @@ class P300:
 
         self.display_original_table()
         self.store_log()
+        # Code for Move Right
         if self.num == 1 and  self.x != self.xf:
             self.x = round(self.x + self.ci, 1)
             self.x_1 = round(self.x_1 + self.ci, 1)
+        # Code for Move Left
         elif self.num == 2 and self.x != self.x1:
             self.x = round(self.x - self.ci, 1)
             self.x_1 = round(self.x_1 - self.ci, 1)
@@ -254,7 +256,7 @@ class P300:
         self.row_col = (self.row_num, self.col_num)
         print(self.output_string)
         pygame.display.flip()
-
+    # Move Command chooses one action from the methods above
     def move(self, num):
         self.num = num
         if self.num !=0 and self.stage == 1:
