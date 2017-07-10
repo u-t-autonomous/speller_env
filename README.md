@@ -2,7 +2,7 @@
 
 # Important Information
 
-##### Stages
+### Stages
 
 There are two stages in the speller:
 
